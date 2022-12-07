@@ -4,8 +4,10 @@ use clap::Parser;
 #[derive(Parser, Debug)]
 struct Cli {
     /// The low frequency limit
+    #[arg(long)]
     lower_frequency: i32,
     /// The high frequency limit
+    #[arg(long)]
     high_frequency: i32,
 }
 
