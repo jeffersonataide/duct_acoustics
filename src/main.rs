@@ -22,10 +22,7 @@ fn main() {
 
     println!("Args: {:?}", args);
 
-    let mut file = match fs::File::create(&args.output) {
-        Ok(file) => file,
-        Err(_e) => panic!("Could not create the output file."),
-    };
+    let mut file = fs::File::create(&args.output).expect("Could not create the output file.");
 
     for frequency in (args.lower_frequency..args.high_frequency).step_by(5) {
         let csv_line = format!("{}, placeholder_value;\n", frequency).into_bytes();
