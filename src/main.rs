@@ -16,6 +16,8 @@ fn main() {
     println!("Sin: {}", (std::f32::consts::PI / 2f32).sin());
     let args = Cli::parse();
 
+    println!("Args: {:?}", args);
+
     println!(
         "Calculating from {} hz to {} hz",
         args.lower_frequency, args.high_frequency
